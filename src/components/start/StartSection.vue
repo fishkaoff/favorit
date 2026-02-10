@@ -7,13 +7,13 @@
         индивидуально под вас
       </p>
       <div class="buttons">
-        <app-button class="btn">
+        <app-button class="btn" @click="scrollToBlock('form')">
           <p class="iconed-btn">
             Оставить заявку
             <img :src="ArrowIcon" alt="вперед" class="btn-icon" />
           </p>
         </app-button>
-        <bordered-button class="btn">
+        <bordered-button class="btn" @click="scrollToBlock('catalog')">
           <p class="iconed-btn">
             Скачать каталог
             <img :src="ArrowWhiteIcon" alt="вперед" class="btn-icon" />
@@ -32,6 +32,7 @@ import AppButton from '../shared/AppButton.vue'
 import ArrowIcon from '@/assets/images/arrow.svg'
 import ArrowWhiteIcon from '@/assets/images/arrow-white.svg'
 import BorderedButton from '../shared/BorderedButton.vue'
+import { scrollToBlock } from '../helpers/helpers'
 </script>
 
 <style scoped lang="scss">

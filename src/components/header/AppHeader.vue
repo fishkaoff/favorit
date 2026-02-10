@@ -4,19 +4,50 @@
       <img :src="LogoIcon" alt="Фаворит" class="logo" />
 
       <ul class="nav">
-        <li class="nav-item"><a href="#" class="nav-link">Портфолио</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">О нас</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Каталог</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FaQ</a></li>
+        <li class="nav-item">
+          <p @click="scrollToBlock('portfolio')" class="nav-link">Портфолио</p>
+        </li>
+        <li class="nav-item"><p @click="scrollToBlock('company')" class="nav-link">О нас</p></li>
+        <li class="nav-item">
+          <p @click="scrollToBlock('catalog-form')" class="nav-link">Каталог</p>
+        </li>
+        <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">FaQ</p></li>
       </ul>
 
       <p class="phone">8 (937) 586-66-26</p>
+
+      <div class="burger-btn" @click="() => (opened = !opened)">
+        <img :src="burgerIcon" alt="Меню" class="burger-icon" />
+      </div>
+
+      <div class="burger-nav" :class="opened ? 'active' : ''">
+        <div class="close-btn" @click="opened = false">
+          <img :src="CloseIcon" alt="Закрыть" class="close-icon" />
+        </div>
+        <ul>
+          <li class="nav-item">
+            <p @click="scrollToBlock('portfolio')" class="nav-link">Портфолио</p>
+          </li>
+          <li class="nav-item"><p @click="scrollToBlock('company')" class="nav-link">О нас</p></li>
+          <li class="nav-item">
+            <p @click="scrollToBlock('catalog-form')" class="nav-link">Каталог</p>
+          </li>
+          <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">FaQ</p></li>
+          <li class="nav-item"><p class="nav-link">8 (937) 586-66-26</p></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import LogoIcon from '@/assets/images/logo.png'
+import { scrollToBlock } from '../helpers/helpers'
+import burgerIcon from '@/assets/images/burger.svg'
+import CloseIcon from '@/assets/images/close.svg'
+import { ref } from 'vue'
+
+const opened = ref(false)
 </script>
 
 <style scoped lang="scss">
@@ -37,10 +68,6 @@ import LogoIcon from '@/assets/images/logo.png'
     .logo {
       width: 120px;
       height: auto;
-
-      @media screen and (max-width: 400px) {
-        width: 80px;
-      }
     }
 
     .nav {
@@ -57,29 +84,85 @@ import LogoIcon from '@/assets/images/logo.png'
           color: variables.$color-accent-light;
 
           transition: all 0.5s;
+          cursor: pointer;
         }
 
         .nav-link:hover {
           color: variables.$color-accent;
         }
       }
-
-      @media screen and (max-width: 965px) {
-        display: none;
-      }
     }
 
     .phone {
       @include mixins.text-base(24px);
       color: variables.$color-accent-light;
+    }
 
-      @media screen and (max-width: 550px) {
-        font-size: 16px;
+    .burger-btn {
+      display: none;
+
+      .burger-icon {
+        width: 50px;
       }
     }
 
-    @media screen and (max-width: 400px) {
-      padding: 20px 40px;
+    .burger-nav {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: variables.$color-accent-dark;
+      border-radius: 30px;
+
+      &.active {
+        display: block;
+      }
+
+      .close-btn {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .close-icon {
+          display: block;
+          padding: 30px 30px 0 0;
+        }
+      }
+
+      ul {
+        padding: 0 50px 50px 50px;
+
+        .nav-item {
+          padding: 30px;
+
+          .nav-link {
+            @include mixins.text-base(24px);
+            color: variables.$color-accent-light;
+
+            transition: all 0.5s;
+            cursor: pointer;
+          }
+
+          .nav-link:hover {
+            color: variables.$color-accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .header {
+    .wrapper {
+      .nav,
+      .phone {
+        display: none;
+      }
+
+      .burger-btn {
+        display: block;
+      }
     }
   }
 }

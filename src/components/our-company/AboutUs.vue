@@ -21,12 +21,20 @@
                   «под ключ» в рекордные сроки.
                 </p>
 
-                <AppButton class="get-more">Узнать больше</AppButton>
+                <AppButton class="get-more" @click="scrollToBlock('form')">Узнать больше</AppButton>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <app-form class="form">
+        <template #title>Остались вопросы?</template>
+        <template #remark
+          >Если вы заинтересованы в наших услугах или возникли вопросы, заполните форму и мы скоро с
+          вами свяжемся</template
+        >
+      </app-form>
     </div>
   </div>
 </template>
@@ -34,6 +42,8 @@
 <script setup lang="ts">
 import BuilderImage from '@/assets/images/builder.png'
 import AppButton from '../shared/AppButton.vue'
+import AppForm from '../shared/AppForm.vue'
+import { scrollToBlock } from '../helpers/helpers'
 </script>
 
 <style scoped lang="scss">
@@ -44,6 +54,10 @@ import AppButton from '../shared/AppButton.vue'
   .container {
     @include mixins.container;
     padding: 50px 0;
+
+    .form {
+      margin-top: 40px;
+    }
 
     .tab {
       border-radius: 30px;
