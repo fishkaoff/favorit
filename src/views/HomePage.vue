@@ -16,6 +16,8 @@
       ></AppForm
     >
 
+    <MapBlock class="section" />
+
     <AppFooter class="section" />
   </div>
 </template>
@@ -30,6 +32,7 @@ import HighQuality from '@/components/high-quality/HighQuality.vue'
 import AppForm from '@/components/shared/AppForm.vue'
 import AppFooter from '@/components/shared/AppFooter.vue'
 import FaqBlock from '@/components/faq/FaqBlock.vue'
+import MapBlock from '@/components/MapBlock/MapBlock.vue'
 </script>
 
 <style scoped lang="scss">

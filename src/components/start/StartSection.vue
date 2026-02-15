@@ -1,11 +1,8 @@
 <template>
   <div class="start-section">
     <div class="content">
-      <h1 class="title">Современные бани в башкирии</h1>
-      <p class="text">
-        строительство современных бань по вашему проекту и бюджету. подбираем стиль бани
-        индивидуально под вас
-      </p>
+      <h1 class="title">Современные бани от 500 тыс. рублей</h1>
+      <p class="text">строим современные бани по вашему индивидуальному проекту и под ваш бюджет</p>
       <div class="buttons">
         <app-button class="btn" @click="scrollToBlock('form')">
           <p class="iconed-btn">
@@ -38,7 +35,7 @@ import { scrollToBlock } from '../helpers/helpers'
 <style scoped lang="scss">
 .start-section {
   @include mixins.container;
-  margin-top: 50px;
+  margin-top: 150px;
 
   background-color: variables.$color-accent-light;
   border-radius: 30px;
@@ -56,6 +53,7 @@ import { scrollToBlock } from '../helpers/helpers'
       @include mixins.text-title(50px);
       color: variables.$color-main;
       font-weight: 600;
+      line-height: 1.2em;
 
       @media screen and (max-width: 500px) {
         font-size: 35px;

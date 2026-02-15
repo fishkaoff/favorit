@@ -5,13 +5,13 @@
 
       <ul class="nav">
         <li class="nav-item">
-          <p @click="scrollToBlock('portfolio')" class="nav-link">Портфолио</p>
+          <p @click="scrollToBlock('catalog-form')" class="nav-link">Каталог</p>
         </li>
         <li class="nav-item"><p @click="scrollToBlock('company')" class="nav-link">О нас</p></li>
         <li class="nav-item">
-          <p @click="scrollToBlock('catalog-form')" class="nav-link">Каталог</p>
+          <p @click="scrollToBlock('portfolio')" class="nav-link">Наши работы</p>
         </li>
-        <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">FaQ</p></li>
+        <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">Вопросы</p></li>
       </ul>
 
       <p class="phone">8 (937) 586-66-26</p>
@@ -26,13 +26,13 @@
         </div>
         <ul>
           <li class="nav-item">
-            <p @click="scrollToBlock('portfolio')" class="nav-link">Портфолио</p>
+            <p @click="scrollToBlock('portfolio')" class="nav-link">Наши работы</p>
           </li>
           <li class="nav-item"><p @click="scrollToBlock('company')" class="nav-link">О нас</p></li>
           <li class="nav-item">
             <p @click="scrollToBlock('catalog-form')" class="nav-link">Каталог</p>
           </li>
-          <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">FaQ</p></li>
+          <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">Вопросы</p></li>
           <li class="nav-item"><p class="nav-link">8 (937) 586-66-26</p></li>
         </ul>
       </div>
@@ -52,15 +52,20 @@ const opened = ref(false)
 
 <style scoped lang="scss">
 .header {
-  @include mixins.container;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: 15px;
+  z-index: 1000;
 
   .wrapper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 20px 70px;
-    margin-top: 30px;
 
     background-color: variables.$color-accent-dark;
     border-radius: 70px;
@@ -81,7 +86,7 @@ const opened = ref(false)
       .nav-item {
         .nav-link {
           @include mixins.text-base(24px);
-          color: variables.$color-accent-light;
+          color: variables.$color-main;
 
           transition: all 0.5s;
           cursor: pointer;
@@ -95,7 +100,7 @@ const opened = ref(false)
 
     .phone {
       @include mixins.text-base(24px);
-      color: variables.$color-accent-light;
+      color: variables.$color-main;
     }
 
     .burger-btn {
@@ -137,7 +142,7 @@ const opened = ref(false)
 
           .nav-link {
             @include mixins.text-base(24px);
-            color: variables.$color-accent-light;
+            color: variables.$color-main;
 
             transition: all 0.5s;
             cursor: pointer;

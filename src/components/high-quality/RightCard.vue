@@ -2,10 +2,9 @@
   <div class="card dark">
     <div class="content">
       <div class="wrapper">
-        <h2 class="title">Название какого то этапа</h2>
+        <h2 class="title">{{ title }}</h2>
         <p class="text">
-          абра кадабра тут текст абра кадабра тут текст абра кадабра тут текст абра кадабра тут
-          текст абра кадабра тут текст
+          {{ text }}
         </p>
       </div>
       <h1 class="position">{{ position }}</h1>
@@ -15,6 +14,8 @@
 
 <script setup lang="ts">
 defineProps<{
+  title: string
+  text: string
   position: number
 }>()
 </script>
@@ -49,6 +50,10 @@ defineProps<{
         color: variables.$color-accent-dark;
         padding-top: 20px;
       }
+    }
+
+    @media screen and (max-width: 400px) {
+      display: block;
     }
   }
 }

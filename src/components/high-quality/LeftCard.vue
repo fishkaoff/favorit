@@ -3,10 +3,9 @@
     <div class="content">
       <h1 class="position">{{ position }}</h1>
       <div class="wrapper">
-        <h2 class="title">Название преимущества</h2>
+        <h2 class="title">{{ title }}</h2>
         <p class="text">
-          абра кадабра тут текст абра кадабра тут текст абра кадабра тут текст абра кадабра тут
-          текст абра кадабра тут текст
+          {{ text }}
         </p>
       </div>
     </div>
@@ -15,6 +14,8 @@
 
 <script setup lang="ts">
 defineProps<{
+  title: string
+  text: string
   position: number
 }>()
 </script>
@@ -56,6 +57,10 @@ defineProps<{
           font-size: 18px;
         }
       }
+    }
+
+    @media screen and (max-width: 400px) {
+      display: block;
     }
   }
 }
