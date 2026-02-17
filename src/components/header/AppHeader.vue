@@ -14,7 +14,7 @@
         <li class="nav-item"><p @click="scrollToBlock('faq')" class="nav-link">Вопросы</p></li>
       </ul>
 
-      <p class="phone">8 (937) 586-66-26</p>
+      <p class="phone">8 (927) 936-66-26</p>
 
       <div class="burger-btn" @click="() => (opened = !opened)">
         <img :src="burgerIcon" alt="Меню" class="burger-icon" />

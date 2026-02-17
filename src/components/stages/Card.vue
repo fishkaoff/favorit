@@ -4,10 +4,9 @@
       <h1 class="position">{{ position }}</h1>
 
       <div class="wrapper">
-        <h2 class="title">Название какого то этапа</h2>
+        <h2 class="title">{{ title }}</h2>
         <p class="text">
-          абра кадабра тут текст абра кадабра тут текст абра кадабра тут текст абра кадабра тут
-          текст абра кадабра тут текст
+          {{ text }}
         </p>
       </div>
     </div>
@@ -18,6 +17,9 @@
 defineProps<{
   style: 'light' | 'dark'
   position: number
+
+  title: string
+  text: string
 }>()
 </script>
 

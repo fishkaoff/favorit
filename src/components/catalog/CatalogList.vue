@@ -27,29 +27,32 @@
 <script setup lang="ts">
 import SectionTitle from '../shared/SectionTitle.vue'
 import ProjectCard from './ProjectCard.vue'
-import testImage from '@/assets/images/case-01.png'
+import Mini from '@/assets/images/mini.jpg'
+import Middle from '@/assets/images/middle.png'
+import maxiB1 from '@/assets/images/maxi-b1.jpg'
+import maxiB2 from '@/assets/images/maxi-b2.png'
 import AppForm from '../shared/AppForm.vue'
 
 const projects = [
   {
-    image: testImage,
-    title: 'Талви',
-    size: '4x3',
+    image: Mini,
+    title: 'Мини Баня',
+    size: '6x4',
   },
   {
-    image: testImage,
-    title: 'Талви1',
-    size: '4x3',
+    image: Middle,
+    title: 'Мидл Баня',
+    size: '7x6',
   },
   {
-    image: testImage,
-    title: 'Талви2',
-    size: '4x3',
+    image: maxiB1,
+    title: 'Макси B1',
+    size: '9x6',
   },
   {
-    image: testImage,
-    title: 'Талви3',
-    size: '4x3',
+    image: maxiB2,
+    title: 'Макси B2',
+    size: '9x6',
   },
 ]
 </script>

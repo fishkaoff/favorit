@@ -18,6 +18,11 @@
       </div>
 
       <app-button class="btn">Отправить</app-button>
+      <p class="privacy">
+        Нажимая кнопку "Отправить" вы
+        <router-link :to="{ name: 'pd-agreement' }">соглашаетесь</router-link> с условиями обработки
+        данных
+      </p>
     </div>
   </div>
 </template>
@@ -99,10 +104,22 @@ const submit = () => {
 
     .btn {
       width: 40%;
-      margin: 60px auto;
+      margin: 0 auto;
+      margin-top: 60px;
 
       @media screen and (max-width: 400px) {
         width: 100%;
+      }
+    }
+
+    .privacy {
+      @include mixins.text-base(16px);
+      color: variables.$color-main;
+      text-align: center;
+      padding-top: 20px;
+
+      a {
+        color: variables.$color-accent-dark;
       }
     }
   }

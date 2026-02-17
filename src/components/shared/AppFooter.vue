@@ -32,9 +32,15 @@
       <div class="col documents">
         <h1 class="title">Нормативные документы</h1>
         <div class="items">
-          <router-link to="" class="item">Политика конфиденциальности</router-link>
-          <router-link to="" class="item">Пользовательское соглашение</router-link>
-          <router-link to="" class="item">Согласие на рекламную рассылку</router-link>
+          <router-link :to="{ name: 'privacy' }" class="item"
+            >Политика конфиденциальности</router-link
+          >
+          <router-link :to="{ name: 'pd-agreement' }" class="item"
+            >Согласие на обработку ПД</router-link
+          >
+          <router-link :to="{ name: 'marketing' }" class="item"
+            >Согласие на рекламную рассылку</router-link
+          >
         </div>
       </div>
     </div>
